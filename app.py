@@ -7,8 +7,7 @@ from db import db
 from ma import ma
 
 from resources.item import Item, ItemList
-
-# from resources.store import Store, StoreList
+from resources.store import Store, StoreList
 from resources.user import UserRegister, UserLogin, User, TokenRefresh, UserLogout
 
 app = Flask(__name__)
@@ -41,8 +40,8 @@ def check_if_token_in_blacklist(decrypted_token):
 
 api.add_resource(Item, "/item/<string:name>")
 api.add_resource(ItemList, "/items")
-# api.add_resource(Store, "/store/<string:name>")
-# api.add_resource(StoreList, "/stores")
+api.add_resource(Store, "/store/<string:name>")
+api.add_resource(StoreList, "/stores")
 api.add_resource(UserRegister, "/register")
 api.add_resource(User, "/user/<int:user_id>")
 api.add_resource(UserLogin, "/login")
